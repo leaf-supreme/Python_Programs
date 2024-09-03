@@ -1,7 +1,7 @@
 # Class for ship in Alien Invasion 
 import pygame
 
-class Ship():
+class Ship:
     """Class for ship in alien invasions"""
     
     def __init__(self, ai_game):
@@ -10,7 +10,7 @@ class Ship():
         self.screen_rect = ai_game.screen.get_rect()
         
         # load the ship bmp from image folder
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/shipp.bmp')
         self.rect = self.image.get_rect()
         
         # start a new ship at bottom mid of screen
@@ -18,5 +18,5 @@ class Ship():
         
     def blitme(self):
         """Draw shop at its current location"""
-        self.screen.blitme(self.image, self.rect)
+        self.screen.blit(self.image, self.rect)
         
