@@ -1,0 +1,4 @@
+#Notes to add to Main for Chapters in Alien Invasion
+Refactoring - simplifies the structure of the code
+                it is denoted with a underscore _check_events() to show it is a helper method
+                it does work inside a lcass but isnt meant to be used by code outside the class
