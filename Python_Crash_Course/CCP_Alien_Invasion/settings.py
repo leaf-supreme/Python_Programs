@@ -1,6 +1,6 @@
 # Setting for Alien invasions game
 
-class Settings():
+class Settings:
     """Settings for Alien Invasions"""
     
     def __init__(self):
