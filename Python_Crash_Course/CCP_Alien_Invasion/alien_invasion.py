@@ -23,6 +23,7 @@ class AlienInvasion:
         """Start main loop for the game"""
         while True:
             self._check_events()
+            self.ship.update()
             self._update_screen()
             self.clock.tick(60)   #set framerate to 60 sec based upon computer clock
     
@@ -32,6 +33,26 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.moving_right = True
+                elif event.key == pygame.K_LEFT:
+                    self.ship.moving_left = True
+                elif event.key == pygame.K_UP:
+                    self.ship.moving_foreward = True
+                elif event.key == pygame.K_DOWN:
+                    self.ship.moving_backward = True
+                    
+                    
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.moving_right = False 
+                elif event.key == pygame.K_LEFT:
+                    self.ship.moving_left = False
+                elif event.key == pygame.K_UP:
+                    self.ship.moving_foreward = False
+                elif event.key == pygame.K_DOWN:
+                    self.ship.moving_backward = False
     
     def _update_screen(self):
         """Updates image on scren and flip to new screen"""
