@@ -5,6 +5,8 @@
 
 
 import pygame 
+from bsettings import BSettings
+from gnome import Gnome
 
 class BlueScreen:
     """Create a class for blue screen settings"""
@@ -12,8 +14,12 @@ class BlueScreen:
     def __init__(self):
         """Inilize the screen settings"""
         pygame.init()
-        self.screen = pygame.display.set_mode((900, 700))
         self.clock = pygame.time.Clock()
+        self.bsettings = BSettings()
+        self.bscreen = pygame.display.set_mode(
+            (self.bsettings.bscreen_height,self.bsettings.bscreen_width))
+        pygame.display.set_caption("H's BlueScreen Goodness")
+        self.gnome = Gnome(self)
         self.game_running = True
         
     def running(self):
@@ -23,9 +29,10 @@ class BlueScreen:
                 if event.type == pygame.QUIT:
                     self.game_running = False
                     
-            self.screen.fill((104,31,249))
+            self.bscreen.fill((self.bsettings.bkgrnd_color))
+            self.gnome.bltime()
             pygame.display.flip()
-            self.clock.tick(30)
+            self.clock.tick(69)
         pygame.quit()
         
 if __name__ == '__main__':
