@@ -12,7 +12,7 @@ class Ship:
         self.settings = ai_game.settings
         
         # load the ship bmp from image folder
-        self.image = pygame.image.load('Python_Crash_Course/CCP_Alien_Invasion/images/shipp.bmp')
+        self.image = pygame.image.load('images/shipp.bmp')
         self.rect = self.image.get_rect()
         
         # start a new ship at bottom mid of screen
