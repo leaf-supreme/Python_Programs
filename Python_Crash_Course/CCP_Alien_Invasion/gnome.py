@@ -12,7 +12,7 @@ class Gnome:
         self.rsettings = gnome.rsettings
         
         # load image sprite
-        self.image = pygame.image.load("Python_Crash_Course/CCP_Alien_Invasion/images/gnomer.bmp")
+        self.image = pygame.image.load("images/gnomer.bmp")
         self.rect = self.image.get_rect()
         
         # start at mid center of screen
